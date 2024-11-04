@@ -1,0 +1,80 @@
+:root {
+    --primary-color: #2196F3;
+    --secondary-color: #FFFFFF;
+    --background-color: #F0F0F0;
+    --text-color: #333333;
+}
+
+.input-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-wrapper{
+    display: flex;
+    gap: 8px;
+}
+
+.check svg {
+    position: relative;
+    z-index: 1;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: var(--text-color);
+    stroke-width: 1.5;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+}
+
+.check svg path {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 0;
+}
+
+.check svg polyline {
+    stroke-dasharray: 22;
+    stroke-dashoffset: 66;
+}
+
+.check:hover:before {
+    opacity: 1;
+}
+
+.check:hover svg {
+    stroke: var(--primary-color, #a3e583);
+}
+
+input[type="checkbox"]:checked + .check svg {
+    stroke: var(--primary-color, #a3e583);
+}
+
+input[type="checkbox"]:checked + .check svg path {
+    stroke-dashoffset: 60;
+    transition: all 0.3s linear;
+}
+
+input[type="checkbox"]:checked + .check svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+}
+
+svg{
+    width: 12px;
+    height: 12px;
+}
+.checkbox-wrapper-name{
+    font-size: 13px;
+}
+
+@media screen and (min-width: 900px) {
+    .checkbox-wrapper-name{
+        font-size: 18px;
+    }
+    svg{
+        width: 18px;
+        height: 18px;
+    }
+}

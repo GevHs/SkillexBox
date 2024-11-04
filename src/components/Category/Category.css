@@ -1,0 +1,15 @@
+.categories-container{
+    margin-bottom:3rem;
+}
+.categories-container-title{
+    font-size: 15px;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+@media screen and (min-width: 900px) {
+    .categories-container-title {
+        font-size: 20px;
+    }
+}
